@@ -3,26 +3,26 @@
 }
 
 ::view-transition-group(root) {
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 ::view-transition-old(root) {
-  animation-name: scaleOut;
+  animation-name: slide-out;
 }
 
 ::view-transition-new(root) {
-  animation-name: scaleIn;
+  animation-name: slade-in;
 }
 
-@keyframes scaleIn {
+@keyframes slade-in {
   from {
-    scale: 0;
+    translate: 100svi;
   }
 }
 
-@keyframes scaleOut {
+@keyframes slide-out {
   to {
-    scale: 0;
+    scale: 100svi;
   }
 }
 
