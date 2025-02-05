@@ -1,0 +1,37 @@
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(*) {
+  animation-duration: 1s;
+}
+
+::view-transition-old(root) {
+  animation-name: slide-out;
+}
+
+::view-transition-new(root) {
+  animation-name: slade-in;
+}
+
+header {
+  view-transition-name: header;
+}
+
+h1 {
+  view-transition-name: title;
+  text-align: center;
+  background-color: var(--color-primary);
+}
+
+@keyframes slade-in {
+  from {
+    translate: -100svi;
+  }
+}
+
+@keyframes slide-out {
+  to {
+    translate: 100svi;
+  }
+}
