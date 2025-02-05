@@ -1,8 +1,37 @@
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(root) {
+  animation-duration: 2s;
+}
+
+::view-transition-old(root) {
+  animation-name: scaleOut;
+}
+
+::view-transition-new(root) {
+  animation-name: scaleIn;
+}
+
+@keyframes scaleIn {
+  from {
+    scale: 0;
+  }
+}
+
+@keyframes scaleOut {
+  to {
+    scale: 0;
+  }
+}
+
 *, *:before, *:after{
     box-sizing: border-box;
 }
 
 :root{
+  --color-primary: lime;
   sctroll-behavior: smooth;
 }
 
@@ -10,4 +39,40 @@ body{
   min-block-size: 100svb;
   margin: 0;
   font-family: system-ui;
+}
+
+nav{
+  background-color: black;
+  display; grid;
+  place-items: center;
+
+  ul{
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a{
+    display: inline-block;
+    color: white;
+    padding-block: 1rem;
+    text-decoration: var(--nav_text-decoration);
+    text-decoration-thickness: 0.25rem;
+    text-decoration-color: var(--color-primary);
+    text-underline-offset: 0.25rem;
+    font-size: clamp(1rem, 2svb, 1.5rem);
+       
+    &.active{
+      --nav_text-decoration: underline;
+    }
+
+    @media (hover: hover){
+      &:hover{
+        --nav_text-decoration: underline;
+      }
+    }
+  }
 }
