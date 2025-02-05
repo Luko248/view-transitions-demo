@@ -1,0 +1,13 @@
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+:root{
+  sctroll-behavior: smooth;
+}
+
+body{
+  min-block-size: 100svb;
+  margin: 0;
+  font-family: system-ui;
+}
