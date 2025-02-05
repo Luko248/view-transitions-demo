@@ -1,17 +1,19 @@
-@view-transition {
-  navigation: auto;
-}
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
 
-::view-transition-group(*) {
-  animation-duration: 1s;
-}
+  ::view-transition-group(*) {
+    animation-duration: 1s;
+  }
 
-::view-transition-old(root) {
-  animation-name: slide-out;
-}
+  ::view-transition-old(root) {
+    animation-name: slide-out;
+  }
 
-::view-transition-new(root) {
-  animation-name: slade-in;
+  ::view-transition-new(root) {
+    animation-name: slade-in;
+  }
 }
 
 header {
