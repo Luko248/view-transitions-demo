@@ -19,6 +19,12 @@
   ::view-transition-group(title) {
     animation-duration: 1s;
   }
+
+  ::view-transition-group(product-title),
+  ::view-transition-group(product-content),
+  ::view-transition-group(product-img) {
+    animation-duration: 0.25s;
+  }
 }
 
 header {

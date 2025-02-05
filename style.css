@@ -55,7 +55,61 @@ h1{
   font-size: clamp(1.5rem, 5svb, 3rem);
 }
 
+h2{
+  font-size: clamp(1.5rem, 3svb, 2.5rem);
+}
+
 section{
   margin-inline: auto;
   inline-size: min(calc(100svi - 2rem), 1024px);
+}
+
+p{
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+:where(.detail, .tile){
+  display: grid;
+  gap: clamp(1rem, 2svb, 1.5rem);
+  padding: clamp(1rem, 2svb, 1.5rem);;
+  border: 3px solid black;
+  border-radius: 1rem;
+}
+
+.tile{
+  grid-template-columns: auto 1fr;
+  color: black;
+  text-decoration: none;
+  background-color: var(--tile_bg, transparent);
+  transition: background-color 0.25s;
+  
+  @media (hover: hover){
+    &:hover{
+      --tile_bg: hsl(from lime h s l / 30%);
+    }
+  }
+
+  img{
+    display: block;
+    max-inline-size: 100%;
+    object-fit: cover;
+  }
+
+  strong{
+    font-size: clamp(1rem, 2svb, 2rem);
+  }
+}
+
+.detail{
+  img{
+    min-inline-size: 100%;
+    object-fit: cover;
+    block-size: 100%;
+    min-block-size: auto;
+  }
+
+  h2, p{
+    margin: 0;
+  }
 }
