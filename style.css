@@ -67,6 +67,17 @@ section{
 p{
   font-size: 1.25rem;
   line-height: 1.7;
+  margin-block-end: 2rem;
+}
+
+.button{
+  display: inline-flex;
+  padding: 1rem 2rem;
+  border-radius: .5em;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  line-height: 1.25;
 }
 
 :where(.detail, .tile){
