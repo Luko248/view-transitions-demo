@@ -107,6 +107,12 @@ p{
   transition: filter 0.25s;
   filter: drop-shadow(0 0 var(--shadow-radius) var(--_color-indigo));
 
+  img{
+    filter: invert(1);
+    overflow: clip;
+    border-radius: inherit;
+  }
+  
   @media (hover){
     &:hover{
       --shadow-radius: 1rem;
