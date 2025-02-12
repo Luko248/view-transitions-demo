@@ -33,8 +33,6 @@ header {
 
 h1 {
   view-transition-name: title;
-  text-align: center;
-  background-color: var(--color-primary);
 }
 
 @keyframes slade-in {

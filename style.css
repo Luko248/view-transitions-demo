@@ -6,6 +6,9 @@
 
 :root{
   --color-primary: lime;
+  --_color-pink: hsl(293 63% 55%);
+  --_color-indigo: hsl(270 100% 47%);
+  --shadow-radius: 0;
   sctroll-behavior: smooth;
 }
 
@@ -35,7 +38,7 @@ nav{
     padding-block: 1rem;
     text-decoration: var(--nav_text-decoration);
     text-decoration-thickness: 0.25rem;
-    text-decoration-color: var(--color-primary);
+    text-decoration-color: var(--_color-indigo);
     text-underline-offset: 0.25rem;
     font-size: clamp(1rem, 2svb, 1.5rem);
        
@@ -52,7 +55,14 @@ nav{
 }
 
 h1{
-  font-size: clamp(1.5rem, 5svb, 3rem);
+  margin-top: 0;
+  font-size: clamp(2rem, 8svb, 5rem);
+  letter-spacing: 0.05em;
+  color: white; 
+  background-image: linear-gradient(var(--_color-pink), var(--_color-indigo));
+  -webkit-background-clip: text; /*🚀*/
+  -webkit-text-stroke: 0.1em transparent; /*🚀*/
+  text-align: center;
 }
 
 h2{
@@ -60,6 +70,7 @@ h2{
 }
 
 section{
+  padding-block: 8svb;
   margin-inline: auto;
   inline-size: min(calc(100svi - 2rem), 1024px);
 }
@@ -70,14 +81,20 @@ p{
   margin-block-end: 2rem;
 }
 
-.button{
+.btn{
   display: inline-flex;
   padding: 1rem 2rem;
   border-radius: .5em;
   text-transform: uppercase;
   color: white;
-  background-color: black;
+  background-color: var(--btn_bg, hsl(from black h s 10%));
   line-height: 1.25;
+  transition: background-color 0.25s;
+  text-decoration: none;
+
+  &:hover{
+    --btn_bg: black;
+  }
 }
 
 :where(.detail, .tile){
@@ -86,20 +103,21 @@ p{
   padding: clamp(1rem, 2svb, 1.5rem);;
   border: 3px solid black;
   border-radius: 1rem;
+  background-color: white;
+  transition: filter 0.25s;
+  filter: drop-shadow(0 0 var(--shadow-radius) var(--_color-indigo));
+
+  @media (hover){
+    &:hover{
+      --shadow-radius: 1rem;
+    }
+  }
 }
 
 .tile{
   grid-template-columns: auto 1fr;
   color: black;
   text-decoration: none;
-  background-color: var(--tile_bg, transparent);
-  transition: background-color 0.25s;
-  
-  @media (hover: hover){
-    &:hover{
-      --tile_bg: hsl(from lime h s l / 30%);
-    }
-  }
 
   img{
     display: block;
@@ -113,6 +131,8 @@ p{
 }
 
 .detail{
+  inline-size: min(100%, 768px);
+  margin-inline: auto;
   img{
     min-inline-size: 100%;
     object-fit: cover;
