@@ -1,6 +1,7 @@
 @media (prefers-reduced-motion: no-preference) {
   @view-transition {
     navigation: auto;
+    pointer-events: none;
   }
 
   //root, *, view-transition-name
