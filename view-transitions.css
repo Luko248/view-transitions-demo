@@ -2,33 +2,33 @@
   @view-transition {
     navigation: auto;
   }
+}
 
-  ::view-transition {
-    pointer-events: none;
-  }
+::view-transition {
+  pointer-events: none;
+}
 
-  //root, *, view-transition-name
-  ::view-transition-group(*) {
-    animation-duration: 0.5s;
-  }
+//root, *, view-transition-name
+::view-transition-group(*) {
+  animation-duration: 0.5s;
+}
 
-  ::view-transition-old(root) {
-    animation-name: slide-out;
-  }
+::view-transition-old(root) {
+  animation-name: slide-out;
+}
 
-  ::view-transition-new(root) {
-    animation-name: slade-in;
-  }
+::view-transition-new(root) {
+  animation-name: slade-in;
+}
 
-  ::view-transition-group(title) {
-    animation-duration: 1s;
-  }
+::view-transition-group(title) {
+  animation-duration: 1s;
+}
 
-  ::view-transition-group(product-title),
-  ::view-transition-group(product-content),
-  ::view-transition-group(product-img) {
-    animation-duration: 0.25s;
-  }
+::view-transition-group(product-title),
+::view-transition-group(product-content),
+::view-transition-group(product-img) {
+  animation-duration: 0.25s;
 }
 
 header {
